@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background glow -->
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="cyber-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0ff" />
+      <stop offset="100%" stop-color="#0f0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Base -->
+  <rect width="100" height="100" rx="20" fill="#050505" stroke="rgba(255, 255, 255, 0.2)" stroke-width="2"/>
+  
+  <!-- Outer Glow Border -->
+  <rect x="5" y="5" width="90" height="90" rx="15" fill="transparent" stroke="url(#cyber-grad)" stroke-width="2" filter="url(#glow)"/>
+
+  <!-- Text <A.S/> -->
+  <text x="50" y="58" font-family="'JetBrains Mono', monospace, sans-serif" font-size="34" font-weight="bold" fill="#fff" text-anchor="middle" filter="url(#glow)">
+    <tspan fill="#0ff">&lt;A</tspan>
+    <tspan fill="#fff">.</tspan>
+    <tspan fill="#0f0">S/&gt;</tspan>
+  </text>
+</svg>
