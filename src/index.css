@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cyber-cyan: #0ff;
+  --color-matrix-green: #0f0;
+  --color-glass: rgba(255, 255, 255, 0.1);
+  --color-glass-border: rgba(255, 255, 255, 0.2);
+  --color-glass-hover: rgba(255, 255, 255, 0.15);
+  
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@layer base {
+  :root {
+    --background: #050505;
+    --foreground: #f0f0f0;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: 'Inter', system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* Create a cool mesh gradient or animated background in React later */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl;
+  }
+  
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-xl transition-all duration-300;
+  }
+  
+  .glass-card:hover {
+    @apply bg-white/10 border-white/20;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  }
+
+  .neon-text-cyan {
+    color: #0ff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3);
+  }
+
+  .neon-text-green {
+    color: #0f0;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5), 0 0 20px rgba(0, 255, 0, 0.3);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 255, 0.5);
+}
+
+/* Custom Cursor styles handled by React */
+
